@@ -1,10 +1,14 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Tabs } from "expo-router";
+import React from "react";
+import { MaterialIcons } from "@expo/vector-icons";
+import { useColorScheme } from "react-native";
+import { Colors } from "@/constants/theme";
+import { HapticTab } from "@/components/haptic-tab";
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+// Simple Icon wrapper to ensure name, size, color work
+const IconSymbol = ({ name, size = 24, color = "black" }: { name: string; size?: number; color?: string }) => {
+  return <MaterialIcons name={name} size={size} color={color} />;
+};
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -12,22 +16,26 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
         tabBarButton: HapticTab,
-      }}>
+      }}
+    >
+      {/* Home Tab */}
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Home",
+          tabBarIcon: ({ color, size }) => <IconSymbol name="home" size={size} color={color} />,
         }}
       />
+
+      {/* About Tab */}
       <Tabs.Screen
-        name="explore"
+        name="about"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: "About",
+          tabBarIcon: ({ color, size }) => <IconSymbol name="info" size={size} color={color} />,
         }}
       />
     </Tabs>

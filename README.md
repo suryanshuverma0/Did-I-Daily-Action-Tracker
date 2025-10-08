@@ -1,50 +1,97 @@
-# Welcome to your Expo app 👋
+# Did I? – Daily Action Tracker
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Did I?** is a lightweight and user-friendly mobile app designed to help you remember and log small but important daily actions. From taking medicine to locking doors or feeding pets, this app keeps a simple record of your activities, giving you peace of mind. No login or internet is required.
 
-## Get started
+---
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- ✅ Log daily actions easily with a single tap  
+- ✅ Track habits and tasks without creating an account  
+- ✅ Works completely offline  
+- ✅ Minimalistic and intuitive interface  
+- ✅ Local storage using AsyncStorage for data persistence  
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## Installation
 
-In the output, you'll find options to open the app in a
+You can try **Did I?** on your Android device by downloading the APK:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+[Download APK](https://drive.google.com/drive/folders/1IWsOEzoT943o8v6QYxc1d7k6KdwS8duF)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+**Requirements:**
 
-## Get a fresh project
+- Android device (API level 21+ recommended)  
+- Allow installation from unknown sources  
 
-When you're ready, run:
+**Steps to install:**
 
-```bash
-npm run reset-project
-```
+1. Download the APK from the link above.  
+2. Open the APK file on your device.  
+3. Follow the on-screen instructions to install the app.  
+4. Open the app and start logging your daily actions.  
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## Usage
 
-To learn more about developing your project with Expo, look at the following resources:
+**How it works:**
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. Open the app.  
+2. Enter your action/task (e.g., “Take medicine”, “Lock door”).  
+3. Tap the checkbox to mark it as completed.  
+4. Review your logged actions anytime for peace of mind.  
 
-## Join the community
+> The app works offline, and all data is stored locally on the device using AsyncStorage.
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Tech Stack
+
+- **Frontend:** React Native + Expo  
+- **Storage:** AsyncStorage  
+- **Build Tools:** Expo CLI, EAS Build  
+- **Platform Support:** Android, Web (via Expo Web)  
+
+---
+
+## Project Structure
+
+DidIApp/
+├── assets/ # Images, icons, and splash screens
+├── app/ # Main app code and screens
+├── node_modules/ # Project dependencies
+├── package.json # Project metadata and dependencies
+├── app.json # Expo project configuration
+└── README.md # Project documentation
+
+
+---
+
+## Contributing
+
+Contributions are welcome! To improve the app or report bugs:
+
+1. Fork the repository  
+2. Create a new branch (`git checkout -b feature-name`)  
+3. Make your changes and commit (`git commit -m "Add feature"`)  
+4. Push to your branch (`git push origin feature-name`)  
+5. Open a Pull Request  
+
+---
+
+## License
+
+This project is **open-source** and available under the [MIT License](LICENSE).  
+
+---
+
+## Contact
+
+- Developed by **Suryanshu Verma**  
+- GitHub: [https://github.com/suryanshu/didiapp](https://github.com/suryanshu/didiapp)  
+
+---
+
+**Did I?** helps you stay on top of your daily routines effortlessly. Simple, reliable, and stress-free.
