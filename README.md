@@ -1,97 +1,52 @@
-# Did I? – Daily Action Tracker
+# Rest Easy: Did I Lock It?
 
-**Did I?** is a lightweight and user-friendly mobile app designed to help you remember and log small but important daily actions. From taking medicine to locking doors or feeding pets, this app keeps a simple record of your activities, giving you peace of mind. No login or internet is required.
+Stop second-guessing. Tap once when you lock the door, turn off the stove or take your pill, and check any time later: *"Today at 8:42 AM · 2 h ago"*.
 
----
+Free, offline, no account. Monetized with Google AdMob (an anchored banner plus a frequency-capped interstitial).
 
 ## Features
+- One-tap logging with haptics and **Undo**
+- Each card shows when you last did it ("Today at 9:41 PM · 12 min ago")
+- Optional **daily reminder** per check (local notifications)
+- History grouped by day, with filters; hold an entry to delete it
+- Custom checks: 20 icons, 8 colours, quick suggestions
+- History retention: 7 / 30 / 90 / 365 days
+- Light and dark mode
+- Google UMP consent (GDPR) with an "Ad privacy choices" entry in Settings
 
-- ✅ Log daily actions easily with a single tap  
-- ✅ Track habits and tasks without creating an account  
-- ✅ Works completely offline  
-- ✅ Minimalistic and intuitive interface  
-- ✅ Local storage using AsyncStorage for data persistence  
+## Tech
+Expo SDK 58 (React Native 0.88, Android API 36) · Expo Router · TypeScript · AsyncStorage · expo-notifications · react-native-google-mobile-ads
 
----
+```
+app/
+  _layout.tsx            root: providers, splash, ads init
+  (tabs)/index.tsx       Today screen
+  (tabs)/history.tsx     History
+  (tabs)/settings.tsx    Settings
+  action-editor.tsx      add/edit a check (modal)
+components/              ActionCard, AdBanner, HapticTab
+constants/config.ts      ← AdMob unit IDs, URLs, ad frequency
+constants/theme.ts       colours, icons
+lib/                     store (data), ads, notifications, time utils
+site/                    privacy policy + app-ads.txt for GitHub Pages
+store-assets/            Play icon 512 + feature graphic
+```
 
-## Installation
+## Develop
+`npx expo start` + **Expo Go** works for UI work (ads are skipped automatically there). To test ads, use a development build:
 
-You can try **Did I?** on your Android device by downloading the APK:
+```bash
+npm install
+eas build -p android --profile development   # once, then install the APK
+npx expo start --dev-client
+```
 
-[Download APK](https://drive.google.com/drive/folders/1IWsOEzoT943o8v6QYxc1d7k6KdwS8duF)
+Checks: `npm run typecheck` · `npm run lint`
 
-**Requirements:**
+## Release
+See **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** for the full walkthrough and **[STORE_LISTING.md](STORE_LISTING.md)** for store text.
 
-- Android device (API level 21+ recommended)  
-- Allow installation from unknown sources  
-
-**Steps to install:**
-
-1. Download the APK from the link above.  
-2. Open the APK file on your device.  
-3. Follow the on-screen instructions to install the app.  
-4. Open the app and start logging your daily actions.  
-
----
-
-## Usage
-
-**How it works:**
-
-1. Open the app.  
-2. Enter your action/task (e.g., “Take medicine”, “Lock door”).  
-3. Tap the checkbox to mark it as completed.  
-4. Review your logged actions anytime for peace of mind.  
-
-> The app works offline, and all data is stored locally on the device using AsyncStorage.
-
----
-
-## Tech Stack
-
-- **Frontend:** React Native + Expo  
-- **Storage:** AsyncStorage  
-- **Build Tools:** Expo CLI, EAS Build  
-- **Platform Support:** Android, Web (via Expo Web)  
-
----
-
-## Project Structure
-
-DidIApp/
-├── assets/ # Images, icons, and splash screens
-├── app/ # Main app code and screens
-├── node_modules/ # Project dependencies
-├── package.json # Project metadata and dependencies
-├── app.json # Expo project configuration
-└── README.md # Project documentation
-
-
----
-
-## Contributing
-
-Contributions are welcome! To improve the app or report bugs:
-
-1. Fork the repository  
-2. Create a new branch (`git checkout -b feature-name`)  
-3. Make your changes and commit (`git commit -m "Add feature"`)  
-4. Push to your branch (`git push origin feature-name`)  
-5. Open a Pull Request  
-
----
-
-## License
-
-This project is **open-source** and available under the [MIT License](LICENSE).  
-
----
-
-## Contact
-
-- Developed by **Suryanshu Verma**  
-- GitHub: [https://github.com/suryanshu/didiapp](https://github.com/suryanshu/didiapp)  
-
----
-
-**Did I?** helps you stay on top of your daily routines effortlessly. Simple, reliable, and stress-free.
+```bash
+npm run build:apk   # test APK
+npm run build:aab   # Play Store bundle
+```

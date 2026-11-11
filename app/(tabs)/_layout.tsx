@@ -1,43 +1,37 @@
-import { Tabs } from "expo-router";
-import React from "react";
-import { MaterialIcons } from "@expo/vector-icons";
-import { useColorScheme } from "react-native";
-import { Colors } from "@/constants/theme";
-import { HapticTab } from "@/components/haptic-tab";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Tabs } from 'expo-router';
+import React from 'react';
+import type { ColorValue } from 'react-native';
 
-// Simple Icon wrapper to ensure name, size, color work
-const IconSymbol = ({ name, size = 24, color = "black" }: { name: string; size?: number; color?: string }) => {
-  return <MaterialIcons name={name} size={size} color={color} />;
-};
+import { HapticTab } from '@/components/haptic-tab';
+import { usePalette } from '@/constants/theme';
+
+type IconName = React.ComponentProps<typeof MaterialCommunityIcons>['name'];
+
+function tabIcon(name: IconName) {
+  return function TabIcon({ color, size }: { color: ColorValue; size: number }) {
+    return <MaterialCommunityIcons name={name} size={size} color={color as string} />;
+  };
+}
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const p = usePalette();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
         tabBarButton: HapticTab,
+        tabBarActiveTintColor: p.primary,
+        tabBarInactiveTintColor: p.textMuted,
+        tabBarStyle: { backgroundColor: p.surface, borderTopColor: p.border },
+        tabBarLabelStyle: { fontWeight: '600' },
+        sceneStyle: { backgroundColor: p.bg },
       }}
     >
-      {/* Home Tab */}
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-          tabBarIcon: ({ color, size }) => <IconSymbol name="home" size={size} color={color} />,
-        }}
-      />
-
-      {/* About Tab */}
-      <Tabs.Screen
-        name="about"
-        options={{
-          title: "About",
-          tabBarIcon: ({ color, size }) => <IconSymbol name="info" size={size} color={color} />,
-        }}
-      />
+      <Tabs.Screen name="index" options={{ title: 'Today', tabBarIcon: tabIcon('check-circle-outline') }} />
+      <Tabs.Screen name="history" options={{ title: 'History', tabBarIcon: tabIcon('history') }} />
+      <Tabs.Screen name="settings" options={{ title: 'Settings', tabBarIcon: tabIcon('cog-outline') }} />
     </Tabs>
   );
 }
