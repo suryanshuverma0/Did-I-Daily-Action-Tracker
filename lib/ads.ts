@@ -19,8 +19,12 @@ if (!adsLib && __DEV__) {
   console.log('[ads] AdMob native module not found (Expo Go?) – ads are disabled in this session.');
 }
 
-/** Uses Google's test ads in development or while the real ID is still a placeholder. */
-const pick = (real: string, test: string) => (__DEV__ || real.includes('xxxx') ? test : real);
+/**
+ * Google's test ads are used in development, in preview/test APKs (EXPO_PUBLIC_USE_TEST_ADS=1, set in eas.json)
+ * and while an ID is still a placeholder. Only the production (Play Store) build shows real ads.
+ */
+const USE_TEST_ADS = __DEV__ || process.env.EXPO_PUBLIC_USE_TEST_ADS === '1';
+const pick = (real: string, test: string) => (USE_TEST_ADS || real.includes('xxxx') ? test : real);
 
 export const BANNER_UNIT_ID = adsLib ? pick(ADMOB_UNITS.banner, adsLib.TestIds.ADAPTIVE_BANNER) : '';
 const INTERSTITIAL_UNIT_ID = adsLib ? pick(ADMOB_UNITS.interstitial, adsLib.TestIds.INTERSTITIAL) : '';

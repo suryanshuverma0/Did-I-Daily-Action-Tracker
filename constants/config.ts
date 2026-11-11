@@ -14,12 +14,12 @@ export const SUPPORT_EMAIL = 'suryanshuverma42@gmail.com';
 
 /**
  * AdMob ad unit IDs (from https://admob.google.com → Apps → Yep, Did It → Ad units).
- * While these still contain "xxxx", the app automatically uses Google's test ads,
- * so you can never accidentally click your own live ads during development.
+ * Dev builds and preview/test APKs always use Google's test ads, so you never click your own live ads.
+ * Only the production build (npm run build:aab, for the Play Store) uses these real IDs.
  */
 export const ADMOB_UNITS = {
-  banner: 'ca-app-pub-xxxxxxxxxxxxxxxx/xxxxxxxxxx',
-  interstitial: 'ca-app-pub-xxxxxxxxxxxxxxxx/xxxxxxxxxx',
+  banner: 'ca-app-pub-5257189700605632/8499958966',
+  interstitial: 'ca-app-pub-5257189700605632/1462284036',
 };
 
 /** Full-screen ads: at most one every N ms, never in the first N ms after launch. */
