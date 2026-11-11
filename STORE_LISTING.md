@@ -52,8 +52,8 @@ Tap it. Forget it. Rest easy.
 - **App category:** Productivity
 - **Tags (pick up to 5):** Productivity, Habit tracker, To-do list, Reminders, Lifestyle
 - **Contact email:** suryanshuverma42@gmail.com
-- **Website:** https://suryanshuverma0.github.io
-- **Privacy policy:** https://suryanshuverma0.github.io/privacy-policy.html
+- **Website:** https://suryanshuverma0.github.io/Did-I-Daily-Action-Tracker/
+- **Privacy policy:** https://suryanshuverma0.github.io/Did-I-Daily-Action-Tracker/privacy-policy.html
 
 ## Graphics (in `store-assets/`)
 | Asset | File | Required size |

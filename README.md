@@ -28,7 +28,7 @@ components/              ActionCard, AdBanner, HapticTab
 constants/config.ts      ← AdMob unit IDs, URLs, ad frequency
 constants/theme.ts       colours, icons
 lib/                     store (data), ads, notifications, time utils
-site/                    privacy policy + app-ads.txt for GitHub Pages
+docs/                    GitHub Pages site: privacy policy (live) + app-ads.txt template
 store-assets/            Play icon 512 + feature graphic
 ```
 

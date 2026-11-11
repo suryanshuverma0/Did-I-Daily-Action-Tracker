@@ -104,7 +104,7 @@ Without this, users in Europe and the UK can't see any ads, so you'd earn nothin
 2. Under **European regulations** → **Create message**.
 3. Apps: select **Rest Easy**.
 4. Languages: English (add others if you want).
-5. **Privacy policy URL:** `https://suryanshuverma0.github.io/privacy-policy.html` (you'll create this page in Part 3).
+5. **Privacy policy URL:** `https://suryanshuverma0.github.io/Did-I-Daily-Action-Tracker/privacy-policy.html` (you'll create this page in Part 3).
 6. Leave the default user choices ("Consent" and "Manage options") as they are.
 7. Click **Publish**.
 8. Optional but recommended: also go to **US state regulations → Create message**, select Rest Easy, and **Publish**.
@@ -140,7 +140,7 @@ export const ADMOB_UNITS = {
 };
 ```
 
-**File 3: `site/app-ads.txt`.** Replace `pub-0000000000000000` with your publisher ID. That's the 16 digits after `ca-app-pub-` in any of your IDs, written as `pub-1234567890123456`:
+**File 3: `docs/app-ads.txt`.** Replace `pub-0000000000000000` with your publisher ID. That's the 16 digits after `ca-app-pub-` in any of your IDs, written as `pub-1234567890123456`:
 ```
 google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0
 ```
@@ -163,35 +163,35 @@ To change the frequency, edit `INTERSTITIAL_MIN_INTERVAL_MS` and `INTERSTITIAL_L
 
 # PART 3: Privacy policy and app-ads.txt website (free, no backend)
 
-Google Play **requires** a public privacy-policy URL. AdMob wants an `app-ads.txt` file at the root of your "developer website". GitHub Pages hosts both for free.
+Google Play **requires** a public privacy-policy URL, and AdMob wants an `app-ads.txt` file. Both are hosted free with **GitHub Pages**.
 
-### 3.1 Create the website repository
-1. Sign in at **https://github.com** (create an account if you don't have one).
-2. Check your username (top-right avatar). The project files assume **`suryanshuverma0`**.
-   - If yours is different, replace `suryanshuverma0` with your username in: `constants/config.ts` (`DEVELOPER_SITE`), `STORE_LISTING.md`, and this guide.
-3. Click **+ (top right) → New repository**.
-4. Repository name: **exactly** `suryanshuverma0.github.io` (your username + `.github.io`).
-5. Visibility: **Public** → **Create repository**.
+### 3.1 Privacy policy: ✅ already live
+GitHub Pages is switched on for this repo (**Settings → Pages → main / docs**). Every file in the project's **`docs/`** folder is published at:
 
-### 3.2 Upload the files
-1. On the new repo page click **"uploading an existing file"**.
-2. Drag in the 3 files from the project's **`site\`** folder:
-   - `index.html`
-   - `privacy-policy.html`
-   - `app-ads.txt` (with your real `pub-` ID from step 2.6!)
-3. Click **Commit changes**.
+| Page | URL |
+|---|---|
+| Home | https://suryanshuverma0.github.io/Did-I-Daily-Action-Tracker/ |
+| **Privacy policy** (use this in Play Console and AdMob) | **https://suryanshuverma0.github.io/Did-I-Daily-Action-Tracker/privacy-policy.html** |
 
-### 3.3 Turn on GitHub Pages
-1. In the repo: **Settings → Pages** (left menu).
-2. Source: **Deploy from a branch**. Branch: **main**, folder **/(root)** → **Save**.
-3. Wait 1–2 minutes and refresh. It shows *"Your site is live at https://suryanshuverma0.github.io/"*.
+To change the policy: edit `docs/privacy-policy.html`, update the "Last updated" date, then `git commit` and `git push`. The site updates within about a minute.
 
-### 3.4 Verify
-Open these in your browser:
-- ✅ https://suryanshuverma0.github.io/privacy-policy.html shows the privacy policy
-- ✅ https://suryanshuverma0.github.io/app-ads.txt shows one line with your `pub-` ID
+⚠️ **Don't rename the GitHub repo.** The URL contains the repo name, and Play will flag a broken privacy policy link.
 
-To change the policy later, edit `privacy-policy.html` on GitHub (pencil icon) and commit. Update the "Last updated" date when you do.
+### 3.2 app-ads.txt (do this after Part 2, once you have your `pub-` ID)
+AdMob only checks `https://suryanshuverma0.github.io/app-ads.txt`, the **root** of your GitHub Pages domain. A project repo can't publish there, so this one file needs a special repo:
+1. On GitHub: **+ → New repository**, named **exactly** `suryanshuverma0.github.io`, **Public** → Create.
+2. **Add file → Create new file** → name it `app-ads.txt` → paste the line from `docs/app-ads.txt` with your real ID:
+   ```
+   google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0
+   ```
+   → **Commit changes**.
+3. **Settings → Pages** → Branch **main** / **(root)** → Save.
+4. After 2 minutes, https://suryanshuverma0.github.io/app-ads.txt should show that line.
+
+(If you tell me your `pub-` ID, I can do all four steps for you with the GitHub CLI.)
+
+### 3.3 The "Website" you enter in Play Console
+Use `https://suryanshuverma0.github.io/Did-I-Daily-Action-Tracker/`. AdMob reads the domain (`suryanshuverma0.github.io`) from it and finds `app-ads.txt` at the root.
 
 ---
 
@@ -324,7 +324,7 @@ Click **Create app** and fill in:
 The Dashboard shows a list of tasks. Click each one, answer, and **Save**.
 
 ### a) Privacy policy
-`https://suryanshuverma0.github.io/privacy-policy.html` → Save
+`https://suryanshuverma0.github.io/Did-I-Daily-Action-Tracker/privacy-policy.html` → Save
 
 ### b) App access
 **All functionality in my app is available without any access restrictions** → Save
@@ -415,7 +415,7 @@ Left menu → **Store presence → Store settings**:
 | Tags | Choose up to 5 relevant ones (e.g. Productivity, Habit tracker, Reminders, To-do list, Lifestyle) |
 | Email | suryanshuverma42@gmail.com (shown publicly) |
 | Phone | optional; leave empty |
-| Website | `https://suryanshuverma0.github.io` (⚠️ **required** for app-ads.txt verification) |
+| Website | `https://suryanshuverma0.github.io/Did-I-Daily-Action-Tracker/` (⚠️ **required**; AdMob uses its domain to find app-ads.txt) |
 
 → **Save**.
 
@@ -529,7 +529,7 @@ Search may take a few days to show the app. The direct link works immediately.
 ### 12.2 Verify app-ads.txt
 1. AdMob → **Apps → app-ads.txt** tab.
 2. After about 24 hours it should show **Verified ✅** for Rest Easy.
-3. If it says "Not found": check that the Play listing's **Website** is exactly `https://suryanshuverma0.github.io` and that `https://suryanshuverma0.github.io/app-ads.txt` opens.
+3. If it says "Not found": check that the Play listing's **Website** is set (3.3) and that `https://suryanshuverma0.github.io/app-ads.txt` opens.
 
 ### 12.3 Payments
 1. AdMob → **Payments → Payment info**: name, address, and bank account (in India, also add the IFSC code).

@@ -6,9 +6,9 @@ export const APP_NAME = 'Rest Easy';
 export const ANDROID_PACKAGE = 'com.suryanshu.resteasy';
 export const PLAY_STORE_URL = `https://play.google.com/store/apps/details?id=${ANDROID_PACKAGE}`;
 
-// Hosted for free on GitHub Pages from the /site folder (see DEPLOYMENT_GUIDE.md, step 2).
-// If your GitHub username is different, change it here, in site/, and in the guide.
-export const DEVELOPER_SITE = 'https://suryanshuverma0.github.io';
+// Hosted for free on GitHub Pages from this repo's /docs folder (see DEPLOYMENT_GUIDE.md, Part 3).
+// Don't rename the GitHub repo, or this URL changes and Play will flag a broken privacy policy.
+export const DEVELOPER_SITE = 'https://suryanshuverma0.github.io/Did-I-Daily-Action-Tracker';
 export const PRIVACY_POLICY_URL = `${DEVELOPER_SITE}/privacy-policy.html`;
 export const SUPPORT_EMAIL = 'suryanshuverma42@gmail.com';
 
