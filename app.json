@@ -18,7 +18,6 @@
     },
     "android": {
       "package": "com.suryanshu.yepdidit",
-      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "monochromeImage": "./assets/images/adaptive-monochrome.png",

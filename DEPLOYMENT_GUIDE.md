@@ -177,7 +177,8 @@ To change the policy: edit `docs/privacy-policy.html`, update the "Last updated"
 
 ⚠️ **Don't rename the GitHub repo.** The URL contains the repo name, and Play will flag a broken privacy policy link.
 
-### 3.2 app-ads.txt (do this after Part 2, once you have your `pub-` ID)
+### 3.2 app-ads.txt: ✅ already live at https://suryanshuverma0.github.io/app-ads.txt
+For reference, this is how it was set up:
 AdMob only checks `https://suryanshuverma0.github.io/app-ads.txt`, the **root** of your GitHub Pages domain. A project repo can't publish there, so this one file needs a special repo:
 1. On GitHub: **+ → New repository**, named **exactly** `suryanshuverma0.github.io`, **Public** → Create.
 2. **Add file → Create new file** → name it `app-ads.txt` → paste the line from `docs/app-ads.txt` with your real ID:
