@@ -1,10 +1,10 @@
-# Rest Easy: Play Store listing (copy and paste)
+# Yep, Did It: Play Store listing (copy and paste)
 
 ## App name (max 30 chars, 25 used)
 ```
-Rest Easy: Did I Lock It?
+Yep, Did It: Did I Lock It?
 ```
-"Rest easy" is an idiom for "stop worrying". "Did I lock it" is the phrase people actually type into the Play Store search.
+"Yep, Did It" answers the exact worry people have ("Did I…?" "Yep!"), so it is easy to remember and recommend. "Did I lock it" is the phrase people actually type into the Play Store search.
 
 ## Short description (max 80 chars, 78 used)
 ```
@@ -15,7 +15,7 @@ Did I lock the door? Stove off? Pill taken? Tap once and stop second-guessing.
 ```
 Did I lock the door? Did I turn off the stove? Did I already take my pill?
 
-If you've ever walked back home just to check, or lain awake wondering, Rest Easy is for you.
+If you've ever walked back home just to check, or lain awake wondering, this app is for you. One glance and you know: yep, you did it.
 
 HOW IT WORKS
 • Tap a card the moment you do it, like "Locked the door".
@@ -41,11 +41,11 @@ PERFECT FOR
 • Closing windows, unplugging appliances, watering plants
 • Anything you tend to double-check
 
-Rest Easy is a simple memory aid and log for everyday tasks. It is not a medical device.
+This app is a simple memory aid and log for everyday tasks. It is not a medical device.
 
 Questions or ideas? Write to us from Settings → Send feedback. We read every message.
 
-Tap it. Forget it. Rest easy.
+Did I lock it? Yep, you did.
 ```
 
 ## Category and tags

@@ -1,4 +1,4 @@
-# Rest Easy: Did I Lock It?
+# Yep, Did It: Did I Lock It?
 
 Stop second-guessing. Tap once when you lock the door, turn off the stove or take your pill, and check any time later: *"Today at 8:42 AM · 2 h ago"*.
 

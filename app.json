@@ -1,20 +1,20 @@
 {
   "expo": {
-    "name": "Rest Easy",
-    "slug": "rest-easy",
+    "name": "Yep, Did It",
+    "slug": "yep-did-it",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "resteasy",
+    "scheme": "yepdidit",
     "userInterfaceStyle": "automatic",
     "platforms": ["android", "ios"],
     "description": "Did I lock the door? Turn off the stove? Take my pill? Tap once when you do it and check anytime.",
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.suryanshu.resteasy"
+      "bundleIdentifier": "com.suryanshu.yepdidit"
     },
     "android": {
-      "package": "com.suryanshu.resteasy",
+      "package": "com.suryanshu.yepdidit",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",

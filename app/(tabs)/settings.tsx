@@ -61,7 +61,7 @@ export default function SettingsScreen() {
 
   const share = () =>
     Share.share({
-      message: `I use ${APP_NAME} to stop worrying "did I lock the door?" Tap once, check anytime. ${PLAY_STORE_URL}`,
+      message: `Always wondering "did I lock the door?" ${APP_NAME} answers it: tap once, check anytime. ${PLAY_STORE_URL}`,
     }).catch(() => {});
 
   const feedback = () =>
@@ -106,7 +106,7 @@ export default function SettingsScreen() {
 
         <Text style={[styles.section, { color: p.textMuted }]}>Support</Text>
         <View style={[styles.card, { backgroundColor: p.surface, borderColor: p.border }]}>
-          <Row icon="star-outline" label={`Rate ${APP_NAME}`} onPress={rate} />
+          <Row icon="star-outline" label="Rate us on Google Play" onPress={rate} />
           <Row icon="share-variant-outline" label="Share with a friend" onPress={share} />
           <Row icon="email-outline" label="Send feedback" onPress={feedback} last />
         </View>

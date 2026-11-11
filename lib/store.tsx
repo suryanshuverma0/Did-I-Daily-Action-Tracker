@@ -21,7 +21,7 @@ export type Settings = { keepDays: number };
 
 type Data = { actions: Action[]; logs: Log[]; settings: Settings };
 
-const STORAGE_KEY = 'resteasy:data:v1';
+const STORAGE_KEY = 'yepdidit:data:v1';
 const MAX_LOGS = 5000;
 
 const OFF: Reminder = { enabled: false, hour: 22, minute: 0 };

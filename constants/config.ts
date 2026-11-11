@@ -2,8 +2,8 @@
  * Everything you need to change before publishing lives in this file and in app.json.
  */
 
-export const APP_NAME = 'Rest Easy';
-export const ANDROID_PACKAGE = 'com.suryanshu.resteasy';
+export const APP_NAME = 'Yep, Did It';
+export const ANDROID_PACKAGE = 'com.suryanshu.yepdidit';
 export const PLAY_STORE_URL = `https://play.google.com/store/apps/details?id=${ANDROID_PACKAGE}`;
 
 // Hosted for free on GitHub Pages from this repo's /docs folder (see DEPLOYMENT_GUIDE.md, Part 3).
@@ -13,7 +13,7 @@ export const PRIVACY_POLICY_URL = `${DEVELOPER_SITE}/privacy-policy.html`;
 export const SUPPORT_EMAIL = 'suryanshuverma42@gmail.com';
 
 /**
- * AdMob ad unit IDs (from https://admob.google.com → Apps → Rest Easy → Ad units).
+ * AdMob ad unit IDs (from https://admob.google.com → Apps → Yep, Did It → Ad units).
  * While these still contain "xxxx", the app automatically uses Google's test ads,
  * so you can never accidentally click your own live ads during development.
  */

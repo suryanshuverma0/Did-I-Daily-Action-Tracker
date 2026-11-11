@@ -65,7 +65,7 @@ export default function TodayScreen() {
         {actions.length > 0 && (
           <Text style={[styles.summary, { color: doneCount === actions.length ? p.success : p.textMuted }]}>
             {doneCount === actions.length
-              ? 'All checked today. Rest easy.'
+              ? 'All checked today. Yep, you did it!'
               : `${doneCount} of ${actions.length} checked today`}
           </Text>
         )}

@@ -56,7 +56,7 @@ export default function ActionEditor() {
       if (!granted) {
         Alert.alert(
           'Notifications are off',
-          'To get reminders, allow notifications for Rest Easy in your phone settings.',
+          'To get reminders, allow notifications for "Yep, Did It" in your phone settings.',
           [
             { text: 'Not now', style: 'cancel' },
             { text: 'Open settings', onPress: () => Linking.openSettings() },

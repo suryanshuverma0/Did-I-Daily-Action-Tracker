@@ -46,7 +46,7 @@ export async function syncReminder(action: Action): Promise<string | undefined> 
   return Notifications.scheduleNotificationAsync({
     content: {
       title: `Did you check: ${action.title}?`,
-      body: 'Tap to log it, then rest easy.',
+      body: 'Done it? Tap to check it off.',
     },
     trigger: {
       type: Notifications.SchedulableTriggerInputTypes.DAILY,

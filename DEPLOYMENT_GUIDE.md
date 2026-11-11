@@ -1,6 +1,6 @@
-# Rest Easy: complete guide from code to Google Play earnings
+# Yep, Did It: complete guide from code to Google Play earnings
 
-**Project:** Rest Easy: Did I Lock It? · **Package:** `com.suryanshu.resteasy` · **Expo SDK 58** (React Native 0.88, targets Android API 36)
+**Project:** Yep, Did It: Did I Lock It? · **Package:** `com.suryanshu.yepdidit` · **Expo SDK 58** (React Native 0.88, targets Android API 36)
 
 Work through the parts **in order**. Each step says what to click or type and what you should see afterwards. The ⏱ steps involve waiting, so start them as early as you can.
 
@@ -74,7 +74,7 @@ npm install
 1. Left menu: **Apps → Add app**.
 2. Platform: **Android**.
 3. "Is the app listed on a supported app store?" → **No** (it isn't on Play yet; you'll link it later).
-4. App name: **Rest Easy**.
+4. App name: **Yep, Did It**.
 5. "User metrics": leave enabled → **Add app**.
 6. You'll see your **App ID**. Copy it into Notepad. It looks like:
    ```
@@ -83,7 +83,7 @@ npm install
    Note the **tilde `~`**. That marks it as the *App ID*.
 
 ### 2.3 Create the banner ad unit
-1. Click **Add ad unit** (or Apps → Rest Easy → Ad units → Add ad unit).
+1. Click **Add ad unit** (or Apps → Yep, Did It → Ad units → Add ad unit).
 2. Choose **Banner**.
 3. Name: `Banner - all screens` → **Create ad unit**.
 4. Copy the **ad unit ID**. It looks like:
@@ -102,12 +102,12 @@ npm install
 Without this, users in Europe and the UK can't see any ads, so you'd earn nothing there.
 1. Left menu: **Privacy & messaging**.
 2. Under **European regulations** → **Create message**.
-3. Apps: select **Rest Easy**.
+3. Apps: select **Yep, Did It**.
 4. Languages: English (add others if you want).
 5. **Privacy policy URL:** `https://suryanshuverma0.github.io/Did-I-Daily-Action-Tracker/privacy-policy.html` (you'll create this page in Part 3).
 6. Leave the default user choices ("Consent" and "Manage options") as they are.
 7. Click **Publish**.
-8. Optional but recommended: also go to **US state regulations → Create message**, select Rest Easy, and **Publish**.
+8. Optional but recommended: also go to **US state regulations → Create message**, select **Yep, Did It**, and **Publish**.
 
 The app already contains the code that shows this message (Google UMP) and the **Settings → Ad privacy choices** button that Google requires.
 
@@ -207,7 +207,7 @@ Enter your Expo email or username and password. ✅ `Logged in as <username>`.
 ```powershell
 eas init
 ```
-- "Would you like to create a project for @username/rest-easy?" → **Y**
+- "Would you like to create a project for @username/yep-did-it?" → **Y**
 
 ✅ It writes a `projectId` into `app.json` under `extra.eas`. Don't delete it.
 
@@ -234,7 +234,7 @@ The build uploads your code and queues it in the cloud. Free accounts sometimes 
 1. When the build finishes, open the build page on your **phone's browser** (or scan the QR code shown in PowerShell).
 2. Tap **Install** to download the `.apk`.
 3. Android will ask to **allow installs from this source** (Chrome). Allow it.
-4. Open **Rest Easy**.
+4. Open **Yep, Did It**.
 
 ### 5.3 Test checklist
 Go through every item:
@@ -312,7 +312,7 @@ Open **https://play.google.com/console**.
 Click **Create app** and fill in:
 | Field | Value |
 |---|---|
-| App name | `Rest Easy: Did I Lock It?` |
+| App name | `Yep, Did It: Did I Lock It?` |
 | Default language | English (United States) – en-US |
 | App or game | **App** |
 | Free or paid | **Free** (⚠️ a free app can never be changed to paid later) |
@@ -397,7 +397,7 @@ Left menu → **Grow users → Store presence → Store listings → Default sto
 Copy-paste from **`STORE_LISTING.md`**:
 | Field | Value |
 |---|---|
-| App name | `Rest Easy: Did I Lock It?` |
+| App name | `Yep, Did It: Did I Lock It?` |
 | Short description | the 78-character line |
 | Full description | the full text block |
 | App icon | upload `store-assets\play-icon-512.png` |
@@ -435,7 +435,7 @@ You need **12 minimum; invite 15–20**, because some people forget or uninstall
 2. Use the default track **"Closed testing - Alpha"** → **Manage track**.
 3. **Countries/regions** tab → **Add countries/regions** → select all (or at least the countries your testers are in) → Save.
 4. **Testers** tab → **Create email list**:
-   - List name: `Rest Easy testers`
+   - List name: `Yep, Did It testers`
    - Paste all the Gmail addresses, comma-separated → Enter → **Save changes**
    - Tick the list → **Save**.
    - Feedback URL or email: your email.
@@ -448,7 +448,7 @@ You need **12 minimum; invite 15–20**, because some people forget or uninstall
 5. Release notes:
    ```
    <en-US>
-   First test version of Rest Easy. Please try adding checks, logging them and turning on a reminder. Send feedback from Settings → Send feedback.
+   First test version of "Yep, Did It". Please try adding checks, logging them and turning on a reminder. Send feedback from Settings → Send feedback.
    </en-US>
    ```
 6. **Next → Save → Go to overview → Send changes for review** (on the "Publishing overview" page).
@@ -463,7 +463,7 @@ The first review usually takes **a few hours to 3 days**. You'll get an email. P
    > Hi! I've made my first Android app and Google requires 14 days of testing before launch. Could you help?
    > 1. Open this link on your Android phone (signed in with this Gmail): <LINK>
    > 2. Tap **Become a tester**
-   > 3. Tap **Download it on Google Play** and install **Rest Easy**
+   > 3. Tap **Download it on Google Play** and install **Yep, Did It**
    > 4. Please **keep it installed for 14 days** and open it every few days 🙏
    > Thank you!
 
@@ -508,12 +508,12 @@ When the Dashboard shows that the **14-day requirement is met**:
 5. Release notes:
    ```
    <en-US>
-   Welcome to Rest Easy! Tap once when you lock the door, turn off the stove or take your pill — and check anytime. Stop second-guessing.
+   Welcome to Yep, Did It! Tap once when you lock the door, turn off the stove or take your pill — and check anytime. Stop second-guessing.
    </en-US>
    ```
 6. **Next → Save → Publishing overview → Send changes for review**.
 7. Review usually takes **1–7 days**. Once you get the "Your update is live" email, the app is public at:
-   `https://play.google.com/store/apps/details?id=com.suryanshu.resteasy`
+   `https://play.google.com/store/apps/details?id=com.suryanshu.yepdidit`
 
 Search may take a few days to show the app. The direct link works immediately.
 
@@ -522,13 +522,13 @@ Search may take a few days to show the app. The direct link works immediately.
 # PART 12: After launch: connect AdMob and get paid
 
 ### 12.1 Link AdMob to the Play listing (important: unlinked apps get limited ads)
-1. AdMob → **Apps → View all apps → Rest Easy → App settings**.
-2. **App store details → Add** → search `Rest Easy` or `com.suryanshu.resteasy` → select it → Add.
+1. AdMob → **Apps → View all apps → Yep, Did It → App settings**.
+2. **App store details → Add** → search `Yep, Did It` or `com.suryanshu.yepdidit` → select it → Add.
 3. AdMob then reviews the app (*"App review: Getting ready"* → *"Ready"*), which takes a few days. Until then ads may be limited.
 
 ### 12.2 Verify app-ads.txt
 1. AdMob → **Apps → app-ads.txt** tab.
-2. After about 24 hours it should show **Verified ✅** for Rest Easy.
+2. After about 24 hours it should show **Verified ✅** for Yep, Did It.
 3. If it says "Not found": check that the Play listing's **Website** is set (3.3) and that `https://suryanshuverma0.github.io/app-ads.txt` opens.
 
 ### 12.3 Payments
@@ -594,11 +594,11 @@ Then build a preview APK and run the Part 5 checklist again before releasing.
 | App **crashes immediately** on launch (production build) | Wrong `androidAppId` in `app.json` (an ad *unit* ID with `/` instead of the App ID with `~`) | Use the App ID with `~`, then rebuild |
 | **No ads** show | New ad units take up to **1 hour (sometimes 24 h)** to serve; app not yet reviewed in AdMob; consent declined; no ad "fill" | Wait, check AdMob → Apps for warnings, and test on a registered test device (2.7). The app hides empty banners on purpose. |
 | Ads show "Test Ad" in the Play version | IDs in `constants/config.ts` still contain `xxxx` | Put in the real IDs (2.6) and rebuild |
-| Reminder notification never arrives | Notifications blocked, or battery saver | Phone Settings → Apps → Rest Easy → Notifications → On. Battery → Rest Easy → *Unrestricted*. |
+| Reminder notification never arrives | Notifications blocked, or battery saver | Phone Settings → Apps → Yep, Did It → Notifications → On. Battery → Yep, Did It → *Unrestricted*. |
 | Expo Go shows `'RNGoogleMobileAdsModule' could not be found` | You're on an old copy of `lib/ads.ts` | The current code skips ads in Expo Go automatically. Pull the latest code, or use a dev build (5.4) |
 | Play: "**Version code 1 has already been used**" | Uploaded an old bundle again | Run `npm run build:aab` again; EAS auto-increments the code |
 | Play: "**Your Android App Bundle is signed with the wrong key**" | The keystore changed (e.g. you deleted the EAS credentials) | Restore it from your backup (5.1), or Play Console → App integrity → *Request upload key reset* |
-| Play: "**Package name already exists**" | Someone else owns `com.suryanshu.resteasy` (unlikely) | Change `android.package` in `app.json` and `ANDROID_PACKAGE` in `constants/config.ts`, e.g. `com.suryanshu.resteasy.app` |
+| Play: "**Package name already exists**" | Someone else owns `com.suryanshu.yepdidit` (unlikely) | Change `android.package` in `app.json` and `ANDROID_PACKAGE` in `constants/config.ts`, e.g. `com.suryanshu.yepdidit.app` |
 | Play rejects for **"Missing privacy policy"** or **"Data safety mismatch"** | URL not reachable, or form answers don't match the SDKs | Check 3.4; redo 8.2 g) and compare with Google's AdMob page |
 | `eas build` says "**projectId mismatch**" or permission denied | `app.json` linked to another account's project | Delete `extra.eas.projectId` from `app.json` and run `eas init` again |
 | PowerShell: "running scripts is disabled" | Execution policy | `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` |
