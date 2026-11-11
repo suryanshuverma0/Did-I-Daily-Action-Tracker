@@ -19,7 +19,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ACTION_COLORS, ACTION_ICONS, Radius, usePalette, type ActionIcon } from '@/constants/theme';
 import { maybeShowInterstitial } from '@/lib/ads';
-import { cancelReminder, ensureNotificationPermission, syncReminder } from '@/lib/notifications';
+import {
+  cancelReminder,
+  ensureNotificationPermission,
+  notificationsAvailable,
+  notificationsError,
+  syncReminder,
+} from '@/lib/notifications';
 import { newId, useStore, type Action } from '@/lib/store';
 import { formatClockHM } from '@/lib/time';
 
@@ -218,43 +224,64 @@ export default function ActionEditor() {
           </View>
 
           <Text style={[styles.label, { color: p.textMuted }]}>Daily reminder</Text>
-          <View style={[styles.reminderCard, { backgroundColor: p.surface, borderColor: p.border }]}>
-            <View style={styles.reminderRow}>
-              <MaterialCommunityIcons name="bell-ring-outline" size={22} color={p.primary} />
-              <Text style={[styles.reminderText, { color: p.text }]}>Remind me every day</Text>
-              <Switch
-                value={reminder.enabled}
-                onValueChange={toggleReminder}
-                trackColor={{ true: p.primary, false: p.border }}
-                thumbColor="#fff"
-              />
+          {!notificationsAvailable ? (
+            <View
+              style={[
+                styles.reminderCard,
+                { backgroundColor: p.surface, borderColor: p.border, padding: 14 },
+              ]}
+            >
+              <Text style={{ color: p.textMuted, fontSize: 14 }}>
+                Reminders are not available in this version of the app.
+                {__DEV__ && notificationsError
+                  ? `
+(${notificationsError})`
+                  : ''}
+              </Text>
             </View>
-            {reminder.enabled && (
-              <View style={[styles.reminderRow, styles.timeRow, { borderTopColor: p.border }]}>
-                <Text style={[styles.reminderText, { color: p.textMuted }]}>At</Text>
-                {Platform.OS === 'android' ? (
-                  <Pressable onPress={pickTime} style={[styles.timeBtn, { backgroundColor: p.primarySoft }]}>
-                    <Text style={[styles.timeText, { color: p.primary }]}>
-                      {formatClockHM(reminder.hour, reminder.minute)}
-                    </Text>
-                  </Pressable>
-                ) : (
-                  <DateTimePicker
-                    mode="time"
-                    display="compact"
-                    value={(() => {
-                      const d = new Date();
-                      d.setHours(reminder.hour, reminder.minute, 0, 0);
-                      return d;
-                    })()}
-                    onChange={(_, date) =>
-                      date && setReminder((r) => ({ ...r, hour: date.getHours(), minute: date.getMinutes() }))
-                    }
-                  />
-                )}
+          ) : (
+            <View style={[styles.reminderCard, { backgroundColor: p.surface, borderColor: p.border }]}>
+              <View style={styles.reminderRow}>
+                <MaterialCommunityIcons name="bell-ring-outline" size={22} color={p.primary} />
+                <Text style={[styles.reminderText, { color: p.text }]}>Remind me every day</Text>
+                <Switch
+                  value={reminder.enabled}
+                  onValueChange={toggleReminder}
+                  trackColor={{ true: p.primary, false: p.border }}
+                  thumbColor="#fff"
+                />
               </View>
-            )}
-          </View>
+              {reminder.enabled && (
+                <View style={[styles.reminderRow, styles.timeRow, { borderTopColor: p.border }]}>
+                  <Text style={[styles.reminderText, { color: p.textMuted }]}>At</Text>
+                  {Platform.OS === 'android' ? (
+                    <Pressable
+                      onPress={pickTime}
+                      style={[styles.timeBtn, { backgroundColor: p.primarySoft }]}
+                    >
+                      <Text style={[styles.timeText, { color: p.primary }]}>
+                        {formatClockHM(reminder.hour, reminder.minute)}
+                      </Text>
+                    </Pressable>
+                  ) : (
+                    <DateTimePicker
+                      mode="time"
+                      display="compact"
+                      value={(() => {
+                        const d = new Date();
+                        d.setHours(reminder.hour, reminder.minute, 0, 0);
+                        return d;
+                      })()}
+                      onChange={(_, date) =>
+                        date &&
+                        setReminder((r) => ({ ...r, hour: date.getHours(), minute: date.getMinutes() }))
+                      }
+                    />
+                  )}
+                </View>
+              )}
+            </View>
+          )}
 
           {existing && (
             <Pressable onPress={remove} style={styles.deleteBtn} accessibilityRole="button">

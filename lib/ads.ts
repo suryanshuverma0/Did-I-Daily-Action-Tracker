@@ -10,10 +10,17 @@ type AdsLib = typeof import('react-native-google-mobile-ads');
  * The AdMob SDK only exists in real builds (EAS / dev client), not in Expo Go.
  * Load it only when its native module is present, so the app still runs in Expo Go (just without ads).
  */
-export const adsLib: AdsLib | null = TurboModuleRegistry.get('RNGoogleMobileAdsModule')
-  ? // eslint-disable-next-line @typescript-eslint/no-require-imports
-    (require('react-native-google-mobile-ads') as AdsLib)
-  : null;
+function loadAdsLib(): AdsLib | null {
+  try {
+    if (!TurboModuleRegistry.get('RNGoogleMobileAdsModule')) return null;
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    return require('react-native-google-mobile-ads') as AdsLib;
+  } catch (e) {
+    console.warn('[ads] failed to load AdMob SDK', e);
+    return null;
+  }
+}
+export const adsLib: AdsLib | null = loadAdsLib();
 
 if (!adsLib && __DEV__) {
   console.log('[ads] AdMob native module not found (Expo Go?) – ads are disabled in this session.');
@@ -51,7 +58,12 @@ const launchedAt = Date.now();
 export async function initAds() {
   if (started || !adsLib) return;
   started = true;
-  const { AdsConsent, AdsConsentPrivacyOptionsRequirementStatus, MaxAdContentRating, default: mobileAds } = adsLib;
+  const {
+    AdsConsent,
+    AdsConsentPrivacyOptionsRequirementStatus,
+    MaxAdContentRating,
+    default: mobileAds,
+  } = adsLib;
   try {
     await AdsConsent.gatherConsent();
   } catch (e) {
