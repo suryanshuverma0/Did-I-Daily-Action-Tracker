@@ -1,6 +1,3 @@
-// Must be first: installs the crash reporter before any other module runs.
-import { takeLastCrash } from '@/lib/crash';
-
 import { DarkTheme, DefaultTheme, Stack, ThemeProvider, type ErrorBoundaryProps } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
@@ -9,6 +6,7 @@ import { Alert, Linking, Pressable, ScrollView, Text, View } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { SUPPORT_EMAIL } from '@/constants/config';
+import { takeLastCrash } from '@/lib/crash';
 import { Palettes, usePalette } from '@/constants/theme';
 import { initAds } from '@/lib/ads';
 import { setupNotifications } from '@/lib/notifications';
